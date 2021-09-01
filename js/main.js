@@ -1,15 +1,24 @@
+let title = "";
+let card = "";
+
 document.getElementById("submit").addEventListener("click", function () {
-    let title = document.getElementById("title").value;
-    let picture = document.getElementById("picture").value;
-    let description = document.getElementById("description").value;
-    let card = document.getElementById("card");
+    title = document.getElementById("title").value;
+    card = document.getElementById("card");
+    // let picture = document.getElementById("picture").value;
+    // let description = document.getElementById("description").value;
 
-    console.log(title);
-    console.log(picture);
-    console.log(description);
+    card.innerHTML += `<h1>${title}</h1>`;
 
-    document.getElementById("title").focus();
+    // card.appendChild(title)
+    // card.appendChild(picture);
+    // card.appendChild(description);
+
+    // document.getElementById("title").focus();
 })
 
-até mais tarde, povo!
-Helena, lembre de dar o push para a gente dar o pull e tentar descobrir o erro.
+function criarCard() {
+    urlImg = document.getElementById("url_img").value;
+
+    let cardSection = document.getElementById("card");
+    cardSection.innerHTML +=`<div><img src="${urlImg}"></div>`;
+}
