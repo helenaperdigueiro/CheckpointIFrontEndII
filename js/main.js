@@ -1,24 +1,14 @@
-let title = "";
-let card = "";
+document.querySelector("form").onsubmit = function(){return false};
 
 document.getElementById("submit").addEventListener("click", function () {
-    title = document.getElementById("title").value;
-    card = document.getElementById("card");
-    // let picture = document.getElementById("picture").value;
-    // let description = document.getElementById("description").value;
+    let title = document.getElementById("title").value;
+    let picture = document.getElementById("picture").value;
+    let description = document.getElementById("description").value;
+    let card = document.getElementById("card");
 
-    card.innerHTML += `<h1>${title}</h1>`;
-
-    // card.appendChild(title)
-    // card.appendChild(picture);
-    // card.appendChild(description);
-
-    // document.getElementById("title").focus();
+    card.innerHTML += `<h1 class="teste">${title}</h1>`;
+    card.innerHTML += `<img src="${picture}">`;
+    card.innerHTML += `<h1>${description}</h1>`;
+    
+    document.getElementById("title").focus(); 
 })
-
-function criarCard() {
-    urlImg = document.getElementById("url_img").value;
-
-    let cardSection = document.getElementById("card");
-    cardSection.innerHTML +=`<div><img src="${urlImg}"></div>`;
-}
