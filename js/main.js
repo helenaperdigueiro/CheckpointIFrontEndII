@@ -10,5 +10,9 @@ document.getElementById("submit").addEventListener("click", function () {
     card.innerHTML += `<img src="${picture}">`;
     card.innerHTML += `<h1>${description}</h1>`;
     
-    document.getElementById("title").focus(); 
-})
+
+    document.getElementById("title").focus();
+    
+    document.querySelectorAll("input").forEach((item) => item.value = "");
+    })
+
