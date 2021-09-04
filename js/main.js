@@ -24,3 +24,11 @@ document.getElementById("submit").addEventListener("click", function () {
 
     document.querySelectorAll("input").forEach((item) => item.value = "");
 })
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }

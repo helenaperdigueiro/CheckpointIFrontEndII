@@ -29,6 +29,25 @@
 
     </div>
 
+    <button class="open-button" onclick="openForm()">Fale conosco</button>
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <h1>Fale conosco</h1>
+      
+          <label for="name"><b>Nome</b></label>
+          <input type="text" placeholder="Insira seu nome" name="name" required>
+
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Insira seu email" name="email" required>
+      
+          <label for="message"><b>Mensagem</b></label>
+          <textarea placeholder="Escreva sua mensagem" name="message" cols="20" rows="5" required></textarea>
+      
+          <button type="submit" class="btn">Enviar</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
+        </form>
+      </div>
+
     <script src="./js/main.js"></script>
 </body>
 
