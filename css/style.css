@@ -126,5 +126,12 @@ ul {
 .card {
   border: 5px solid black;
   display: grid;
-  grid-area: ;
+  columns: 5 200px;
+  column-gap: 1.5rem;
+  width: 20%;
+  margin: 0 auto;
+}
+
+.delete {
+  max-width: 2rem;
 }
