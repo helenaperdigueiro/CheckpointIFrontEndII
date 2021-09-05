@@ -10,9 +10,9 @@ document.getElementById("submit").addEventListener("click", function () {
     card.setAttribute("class", "card");
     cards.appendChild(card);
 
-    card.innerHTML += `<h1 class="teste">${title}</h1>`;
-    card.innerHTML += `<img src="${picture}">`;
-    card.innerHTML += `<h1>${description}</h1>`;
+    card.innerHTML += `<h2 class="cardTitle">${title}</h2>`;
+    card.innerHTML += `<img src="${picture}" class="cardPicture">`;
+    card.innerHTML += `<h3 class="cardDescription">${description}</h3>`;
 
     let btnDelete = document.createElement("img");
     btnDelete.setAttribute("src", "https://image.flaticon.com/icons/png/512/463/463612.png");

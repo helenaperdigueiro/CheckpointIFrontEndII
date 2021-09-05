@@ -121,17 +121,31 @@ ul {
 
 #card {
   border: 5px solid red;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /* display: grid;
+  gap: 1rem;
+  grid-auto-flow: column; */
 }
 
 .card {
   border: 5px solid black;
-  display: grid;
-  columns: 5 200px;
+  max-width: 20%;
+  padding: 0.5rem;
+  text-align: center;
+  /* display: grid; */
+  /* columns: 5 200px;
   column-gap: 1.5rem;
   width: 20%;
-  margin: 0 auto;
+  margin: 0 auto; */
 }
 
 .delete {
   max-width: 2rem;
+}
+
+.cardPicture, .cardTitle, .cardDescription {
+  width: 100%;
+  overflow-wrap: break-word;
 }
