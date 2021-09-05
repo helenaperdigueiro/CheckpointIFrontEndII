@@ -7,7 +7,7 @@ document.getElementById("submit").addEventListener("click", function () {
     let cards = document.getElementById("card");
     let card = document.createElement("div");
 
-    card.setAttribute("class", "card")
+    card.setAttribute("class", "card");
     cards.appendChild(card);
 
     card.innerHTML += `<h1 class="teste">${title}</h1>`;
@@ -25,10 +25,18 @@ document.getElementById("submit").addEventListener("click", function () {
     document.querySelectorAll("input").forEach((item) => item.value = "");
 })
 
-function openForm() {
+function openContact() {
     document.getElementById("myForm").style.display = "block";
   }
   
-  function closeForm() {
+  function closeContact() {
     document.getElementById("myForm").style.display = "none";
+  }
+
+  function openTeam() {
+    document.getElementById("myForm2").style.display = "block";
+  }
+  
+  function closeTeam() {
+    document.getElementById("myForm2").style.display = "none";
   }
