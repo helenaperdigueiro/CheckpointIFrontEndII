@@ -27,26 +27,26 @@ document.getElementById("submit").addEventListener("click", function () {
     btnDelete.setAttribute("src", "https://image.flaticon.com/icons/png/512/463/463612.png");
     btnDelete.setAttribute("class", "delete");
     card.appendChild(btnDelete);
-    btnDelete.addEventListener("click", function(){card.remove()});
+    btnDelete.addEventListener("click", function () { card.remove() });
 
     document.getElementById("title").focus();
 
     document.querySelectorAll("input").forEach((item) => item.value = "");
-  }  
+  }
 })
 
 function openContact() {
-    contact.style.display = "block";
-  }
-  
-  function closeContact() {
-    contact.style.display = "none";
-  }
+  contact.style.display = "block";
+}
 
-  function openTeam() {
-    team.style.display = "block";
-  }
-  
-  function closeTeam() {
-    team.style.display = "none";
-  }
+function closeContact() {
+  contact.style.display = "none";
+}
+
+function openTeam() {
+  team.style.display = "block";
+}
+
+function closeTeam() {
+  team.style.display = "none";
+}
