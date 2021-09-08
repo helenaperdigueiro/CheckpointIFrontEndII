@@ -1,6 +1,9 @@
 document.querySelector("form").onsubmit = function () { return false };
 
 document.getElementById("submit").addEventListener("click", function () {
+  if ((document.getElementById("title").value == "") || (document.getElementById("picture").value == "") || (document.getElementById("description").value == "")) {
+    alert("Preencha os 3 campos!");
+  } else {
     let title = document.getElementById("title").value;
     let picture = document.getElementById("picture").value;
     let description = document.getElementById("description").value;
@@ -23,6 +26,7 @@ document.getElementById("submit").addEventListener("click", function () {
     document.getElementById("title").focus();
 
     document.querySelectorAll("input").forEach((item) => item.value = "");
+  }  
 })
 
 function openContact() {
