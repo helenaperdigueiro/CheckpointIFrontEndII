@@ -121,9 +121,20 @@ ul {
 
 #card {
   border: 5px solid red;
-  display: flex;
+  /* columns: 4 0.1rem; */
+  columns: 4 200px;
+  /* column-fill: balance; */
+  /* display: block; */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto 1fr; */
+  /* grid-auto-flow: dense; */
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+  grid-auto-flow: dense;
+  gap: 1rem; */
+  /* margin: 0 auto; */
+  /* display: flex;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   /* display: grid;
   gap: 1rem;
   grid-auto-flow: column; */
@@ -131,10 +142,14 @@ ul {
 
 .card {
   border: 5px solid black;
-  max-width: 20%;
+  /* max-width: 20%; */
   padding: 0.5rem;
   text-align: center;
-  /* display: grid; */
+  display: inline-block;
+  /* break-inside: avoid; */
+  /* height: fit-content; */
+  /* grid-column: 4; */
+
   /* columns: 5 200px;
   column-gap: 1.5rem;
   width: 20%;
