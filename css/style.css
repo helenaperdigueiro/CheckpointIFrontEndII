@@ -1,8 +1,50 @@
-body {font-family: Arial, Helvetica, sans-serif;}
-* {
-  box-sizing: border-box;
+html *{
   margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
 }
+
+#cards {
+  border: 5px solid #FFD5D5;
+  columns: 5 200px;
+  column-gap: 0;
+  text-align: center;
+}
+
+.card {
+  border: 5px solid black;
+  padding: 0.5rem;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  word-break: break-word;
+}
+
+#extraDivFormImgs {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#formImgs {
+  position: fixed;
+  z-index: 2;
+  padding: 1rem;
+  /* animation: slide 0.4s; */
+  background: #FFFDF1;
+  bottom: 5.5rem;
+}
+
+
+/* @keyframes slide {
+  from {transform: translateY(100%);}
+  to{transform: translateX(0%);}
+} */
+
+
 
 .btnOp {
   width: 2rem;
@@ -135,21 +177,6 @@ ul {
   list-style-type: none;
 }
 
-#card {
-  border: 5px solid pink;
-  columns: 5 200px;
-  column-gap: 0;
-  text-align: center;
-}
-
-.card {
-  border: 5px solid black;
-  padding: 0.5rem;
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  word-break: break-word;
-}
 
 .delete {
   max-width: 1.5rem;
@@ -159,32 +186,8 @@ ul {
   width: 100%;
 }
 
-.container {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding: 1rem;
-  animation: slide 0.4s;
-  background: whitesmoke;
-  bottom: 5.5rem;
-}
 
-.container2 {
-  display: block;
-  position: fixed;
-  z-index: 1;
-  padding: 1rem;
-  animation: slide 0.4s;
-  background: whitesmoke;
-  bottom: 5.5rem;
-}
-
-@keyframes slide {
-  from {transform: translateY(100%);}
-  to{transform: translateX(0%);}
-}
-
-#addButton {
+#btnOpenForm {
   display: flex;
   justify-content: center;
   left: 48.1%;
@@ -192,15 +195,12 @@ ul {
   margin: 0.5rem;
   position: fixed;
   bottom: 1rem;
-}
-
-#addBtn {
   width: 2.5rem;
   cursor: pointer;
 }
 
 #btnCloseForm {
-  width: 1rem;
+  width: 1.2rem;
   cursor: pointer;
 }
 
