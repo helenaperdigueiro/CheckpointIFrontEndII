@@ -10,15 +10,16 @@ let btnCloseForm = document.getElementById("btnCloseForm")
 
 addBtn.onclick = function(){
   container.classList.toggle("container2");
-  window.onclick = function(event) {
-    if ((event.target != container) && (event.target != addBtn)) {
-      container.setAttribute("class", "container");
-    }
+}
+
+window.onclick = function(event) {
+  if ((event.target === container.outerHTML) && (event.target != addBtn)) {
+    container.setAttribute("class", "container");
   }
 }
 
 btnCloseForm.onclick = function() {
-  container.style.display = "none"
+  container.setAttribute("class", "container");
 }
 
 document.querySelector("form").onsubmit = function () { return false };
