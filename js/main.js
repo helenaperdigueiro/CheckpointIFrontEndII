@@ -1,25 +1,33 @@
+let cards = document.getElementById("cards");
 let title = document.getElementById("title");
 let picture = document.getElementById("picture");
 let description = document.getElementById("description");
-let cards = document.getElementById("card");
+
+let btnOpenForm = document.getElementById("btnOpenForm");
+let btnCloseForm = document.getElementById("btnCloseForm");
+let extraDivFormImgs = document.getElementById("extraDivFormImgs");
+
 let contact = document.getElementById("contact");
 let team = document.getElementById("team");
-let addBtn = document.getElementById("addBtn")
-let container = document.getElementById("containerMax")
-let btnCloseForm = document.getElementById("btnCloseForm")
 
-addBtn.onclick = function(){
-  container.classList.toggle("container2");
-  window.onclick = function(event) {
-    if ((event.target != container) && (event.target != addBtn)) {
-      container.setAttribute("class", "container");
-    }
+btnOpenForm.onclick = function(event) {
+  if (extraDivFormImgs.style.display == "none") {
+    extraDivFormImgs.style.display = "block";
+  } else {
+    extraDivFormImgs.style.display = "none";
   }
 }
 
 btnCloseForm.onclick = function() {
-  container.style.display = "none"
+  extraDivFormImgs.style.display = "none";
 }
+
+window.onclick = function(event) {
+  if (event.target == extraDivFormImgs) {
+    extraDivFormImgs.style.display = "none";
+  }
+}
+
 
 document.querySelector("form").onsubmit = function () { return false };
 
