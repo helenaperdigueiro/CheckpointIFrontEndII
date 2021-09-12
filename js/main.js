@@ -4,6 +4,22 @@ let description = document.getElementById("description");
 let cards = document.getElementById("card");
 let contact = document.getElementById("contact");
 let team = document.getElementById("team");
+let addBtn = document.getElementById("addBtn")
+let container = document.getElementById("containerMax")
+let btnCloseForm = document.getElementById("btnCloseForm")
+
+addBtn.onclick = function(){
+  container.classList.toggle("container2");
+  window.onclick = function(event) {
+    if ((event.target != container) && (event.target != addBtn)) {
+      container.setAttribute("class", "container");
+    }
+  }
+}
+
+btnCloseForm.onclick = function() {
+  container.style.display = "none"
+}
 
 document.querySelector("form").onsubmit = function () { return false };
 

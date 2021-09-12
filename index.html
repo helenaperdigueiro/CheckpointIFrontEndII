@@ -10,9 +10,15 @@
 </head>
 
 <body>
-    <div id="container">
+    <div id="card">
+    </div>
+
+    <div id="addButton"><img src="https://image.flaticon.com/icons/png/512/1251/1251695.png" id="addBtn" alt="Adicionar"></div>
+    
+    <div class="container" id="containerMax">
         <form>
             <fieldset>
+                <img src="https://image.flaticon.com/icons/png/512/864/864393.png" id="btnCloseForm" alt="">
                 <legend>Inspirações</legend>
                 <label for="title">Título</label>
                 <input type="text" name="title" id="title" placeholder="Insira um título">
@@ -26,10 +32,7 @@
         </form>
     </div>
 
-    <div id="card">
-    </div>
-
-    <button class="open-button" onclick="openContact()">Fale conosco</button>
+    <button class="open-button" onclick="openContact()"><img src="https://image.flaticon.com/icons/png/512/3885/3885190.png" class="btnOp" alt=""><p class="btnText">Fale conosco</p></button>
     <div class="form-popup" id="contact">
         <form class="form-container">
             <button type="button" class="btn cancel" onclick="closeContact()">Fechar</button>
@@ -49,7 +52,7 @@
         </form>
     </div>
 
-    <button class="open-button2" onclick="openTeam()">Equipe</button>
+    <button class="open-button2" onclick="openTeam()"><img src="https://image.flaticon.com/icons/png/512/1534/1534952.png" class="btnOp" alt=""><p class="btnText">Equipe</p></button>
     <div class="form-popup2" id="team">
         <div class="form-container2">
             <button type="button" class="btn2 cancel2" onclick="closeTeam()">Fechar</button>
