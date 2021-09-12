@@ -1,21 +1,36 @@
 body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  top: 23px;
-  right: 30px;
-  width: 180px;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
+.btnOp {
+  width: 2rem;
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+/* time botao */
+.open-button {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  background-color: rgb(201, 111, 176);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  width: 4rem;
+}
+
+/* fale conosco botao */
 .open-button2 {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
   background-color: #555;
   color: white;
   padding: 10px 15px;
@@ -23,26 +38,28 @@ body {font-family: Arial, Helvetica, sans-serif;}
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
-  top: 76px;
-  right: 30px;
-  width: 180px;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
 }
 
 /* The popup form - hidden by default */
+/* time formulario */
 .form-popup {
   display: none;
   position: fixed;
-  top: 0;
-  right: 15px;
+  bottom: 0;
+  left: 15px;
   border: 5px solid #f1f1f1;
-  padding: 9px 0 0 0;
+  padding: 0;
   z-index: 2;
 }
 
+/* fale conosco formulario */
 .form-popup2 {
   display: none;
   position: fixed;
-  top: 61px;
+  bottom: 0;
   right: 15px;
   border: 5px solid #f1f1f1;
   padding: 0;
@@ -61,7 +78,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   padding: 10px 10px 10px 10px;
   background-color: white;
 }
-
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=email], .form-container textarea {
@@ -120,7 +136,7 @@ ul {
 }
 
 #card {
-  border: 5px solid red;
+  border: 5px solid pink;
   columns: 5 200px;
   column-gap: 0;
   text-align: center;
@@ -141,5 +157,67 @@ ul {
 
 .cardPicture, .cardTitle, .cardDescription {
   width: 100%;
-  object-fit: scale-down;
+}
+
+.container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding: 1rem;
+  animation: slide 0.4s;
+  background: whitesmoke;
+  bottom: 5.5rem;
+}
+
+.container2 {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding: 1rem;
+  animation: slide 0.4s;
+  background: whitesmoke;
+  bottom: 5.5rem;
+}
+
+@keyframes slide {
+  from {transform: translateY(100%);}
+  to{transform: translateX(0%);}
+}
+
+#addButton {
+  display: flex;
+  justify-content: center;
+  left: 48.1%;
+  transform: translate(-51.9%, 0);
+  margin: 0.5rem;
+  position: fixed;
+  bottom: 1rem;
+}
+
+#addBtn {
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+#btnCloseForm {
+  width: 1rem;
+  cursor: pointer;
+}
+
+.btnText {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .btnText {
+    display: block;
+  }
+  .open-button {
+    background-color: pink;
+    width: 10rem;
+  }
+  .open-button2 {
+    background-color: rgb(124, 81, 136);
+    width: 10rem;
+  }
 }
