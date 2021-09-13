@@ -4,34 +4,32 @@ let pictureForm = document.getElementById("pictureForm");
 let descriptionForm = document.getElementById("descriptionForm");
 let btnDeletePic = document.querySelectorAll("btnDeletePic");
 
-let btnOpenForm = document.getElementById("btnOpenForm");
+let btnOpenForm = document.getElementById("btnAddCard");
 let btnCloseForm = document.getElementById("btnCloseForm");
 let extraDivFormImgs = document.getElementById("extraDivFormImgs");
 let formImgs = document.getElementById("formImgs");
 
-let contact = document.getElementById("contact");
-let team = document.getElementById("team");
+let submitForm = document.getElementById("submitForm");
+
+document.querySelector("form").onsubmit = function () { return false };
+
+let extraDivContact = document.getElementById("extraDivContact");
+let btnOpenContact = document.getElementById("btnOpenContact");
+
+let extraDivTeam = document.getElementById("extraDivTeam");
+let btnOpenTeam = document.getElementById("btnOpenTeam");
 
 btnOpenForm.onclick = function() {
   if (extraDivFormImgs.style.display == "none") {
     extraDivFormImgs.style.display = "block";
   } else {
     extraDivFormImgs.style.display = "none";
-    formImgs.style.animation = "slideDown 0.4s";
   }
 }
 
 btnCloseForm.onclick = function() {
   extraDivFormImgs.style.display = "none";
 }
-
-window.onclick = function(event) {
-  if (event.target == extraDivFormImgs) {
-    extraDivFormImgs.style.display = "none";
-  }
-}
-
-document.querySelector("form").onsubmit = function () { return false };
 
 document.getElementById("submitForm").addEventListener("click", function () {
   if ((titleForm.value == "") || (pictureForm.value == "") || (descriptionForm.value == "")) {
@@ -78,18 +76,29 @@ document.getElementById("submitForm").addEventListener("click", function () {
   }
 })
 
-function openContact() {
-  contact.style.display = "block";
+
+btnOpenContact.onclick = function() {
+  if (extraDivContact.style.display == "none") {
+    extraDivContact.style.display = "block";
+  } else {
+    extraDivContact.style.display = "none";
+  }
 }
 
-function closeContact() {
-  contact.style.display = "none";
+btnOpenTeam.onclick = function() {
+  if (extraDivTeam.style.display == "none") {
+    extraDivTeam.style.display = "block";
+  } else {
+    extraDivTeam.style.display = "none";
+  }
 }
 
-function openTeam() {
-  team.style.display = "block";
-}
-
-function closeTeam() {
-  team.style.display = "none";
+window.onclick = function(event) {
+  if (event.target == extraDivFormImgs) {
+    extraDivFormImgs.style.display = "none";
+  } if (event.target == extraDivContact) {
+    extraDivContact.style.display = "none";
+  } if (event.target == extraDivTeam) {
+    extraDivTeam.style.display = "none";
+  }
 }
