@@ -1,20 +1,22 @@
 let cards = document.getElementById("cards");
-let title = document.getElementById("title");
-let picture = document.getElementById("picture");
-let description = document.getElementById("description");
+let title = document.getElementById("titleForm");
+let picture = document.getElementById("pictureForm");
+let description = document.getElementById("descriptionForm");
 
 let btnOpenForm = document.getElementById("btnOpenForm");
 let btnCloseForm = document.getElementById("btnCloseForm");
 let extraDivFormImgs = document.getElementById("extraDivFormImgs");
+let formImgs = document.getElementById("formImgs");
 
 let contact = document.getElementById("contact");
 let team = document.getElementById("team");
 
-btnOpenForm.onclick = function(event) {
+btnOpenForm.onclick = function() {
   if (extraDivFormImgs.style.display == "none") {
     extraDivFormImgs.style.display = "block";
   } else {
     extraDivFormImgs.style.display = "none";
+    formImgs.style.animation = "slideDown 0.4s";
   }
 }
 
@@ -30,9 +32,9 @@ window.onclick = function(event) {
 
 document.querySelector("form").onsubmit = function () { return false };
 
-document.getElementById("submit").addEventListener("click", function () {
+document.getElementById("submitForm").addEventListener("click", function () {
   if ((title.value == "") || (picture.value == "") || (description.value == "")) {
-    document.getElementById("title").focus();
+    title.focus();
 
     document.querySelectorAll("input").forEach((item) => item.value = "");
 
@@ -48,11 +50,12 @@ document.getElementById("submit").addEventListener("click", function () {
 
     let btnDelete = document.createElement("img");
     btnDelete.setAttribute("src", "https://image.flaticon.com/icons/png/512/463/463612.png");
-    btnDelete.setAttribute("class", "delete");
+    btnDelete.setAttribute("class", "btnDelete");
     card.appendChild(btnDelete);
-    btnDelete.addEventListener("click", function () { card.remove() });
+    btnDelete.addEventListener("click", function() { card.remove() });
+    card.onmouseover = function() { btnDelete.style.display = "block" };
 
-    document.getElementById("title").focus();
+    title.focus();
 
     document.querySelectorAll("input").forEach((item) => item.value = "");
   }

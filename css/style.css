@@ -1,24 +1,45 @@
-html *{
+* {
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
 }
 
+body {
+  position: relative;
+  
+}
+
+header {
+  width: 100%;
+  height: 5rem;
+  background: rgb(247, 247, 247);
+}
+
+main {
+  min-height: 100vh;
+  margin: 0 2%;
+}
+
 #cards {
-  border: 5px solid #FFD5D5;
   columns: 5 200px;
-  column-gap: 0;
-  text-align: center;
 }
 
 .card {
-  border: 5px solid black;
+  border: solid black 1px;
   padding: 0.5rem;
+  margin-top: 2%;
   text-align: center;
   display: inline-block;
   width: 100%;
   word-break: break-word;
+}
+
+.cardPicture {
+  padding: 2%;
 }
 
 #extraDivFormImgs {
@@ -27,23 +48,27 @@ html *{
   width: 100%;
   height: 100%;
   z-index: 1;
+  /* animation: slideDown 0.4s; */
 }
 
 #formImgs {
   position: fixed;
   z-index: 2;
   padding: 1rem;
-  /* animation: slide 0.4s; */
+  animation: slideUp 0.4s;
   background: #FFFDF1;
   bottom: 5.5rem;
 }
 
-
-/* @keyframes slide {
+@keyframes slideUp {
   from {transform: translateY(100%);}
   to{transform: translateX(0%);}
-} */
+}
 
+@keyframes slideDown {
+  from {transform: translateY(-100%);}
+  to{transform: translateX(0%);}
+}
 
 
 .btnOp {
@@ -51,38 +76,40 @@ html *{
 }
 
 /* Button used to open the contact form - fixed at the bottom of the page */
-/* time botao */
+/* fale conosco botao */
 .open-button {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  align-items: center;
-  background-color: rgb(201, 111, 176);
+  align-content: center;
+  justify-content: center;
+  background-color: rgb(201, 151, 187);
   color: white;
   padding: 10px 15px;
   border: none;
   cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 1rem;
+  position: inherit;
+  bottom: 1.3rem;
   left: 1rem;
-  width: 4rem;
+  width: 3rem;
+  height: 2.5rem;
 }
 
-/* fale conosco botao */
+/* time botao */
 .open-button2 {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  align-items: center;
-  background-color: #555;
+  align-content: center;
+  justify-content: center;
+  background-color: rgb(155, 101, 170);
   color: white;
   padding: 10px 15px;
   border: none;
   cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 1rem;
+  position: inherit;
+  bottom: 1.3rem;
   right: 1rem;
-  width: 4rem;
+  width: 3rem;
+  height: 2.5rem;
 }
 
 /* The popup form - hidden by default */
@@ -177,15 +204,14 @@ ul {
   list-style-type: none;
 }
 
-
-.delete {
+.btnDelete {
   max-width: 1.5rem;
+  display: none;
 }
 
 .cardPicture, .cardTitle, .cardDescription {
   width: 100%;
 }
-
 
 #btnOpenForm {
   display: flex;
@@ -194,9 +220,10 @@ ul {
   transform: translate(-51.9%, 0);
   margin: 0.5rem;
   position: fixed;
-  bottom: 1rem;
-  width: 2.5rem;
+  bottom: 0.25rem;
+  width: 3.5rem;
   cursor: pointer;
+  z-index: 1;
 }
 
 #btnCloseForm {
@@ -208,16 +235,23 @@ ul {
   display: none;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  background: rgb(247, 247, 247);
+}
+
 @media screen and (min-width: 600px) {
   .btnText {
     display: block;
   }
   .open-button {
-    background-color: pink;
     width: 10rem;
   }
   .open-button2 {
-    background-color: rgb(124, 81, 136);
     width: 10rem;
   }
 }
+

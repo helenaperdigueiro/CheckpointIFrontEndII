@@ -15,74 +15,87 @@
 </head>
 
 <body>
-    <div id="cards">
-    </div>
+    <header>
+        <h1>CardStock</h1>
+    </header>
+    <main>
+        <div id="cards">
+        </div>
 
-    <img src="./imgs/btnOpenForm.svg" id="btnOpenForm" alt="Adicionar">
-    
-    <div id="extraDivFormImgs">
-        <div id="formImgs">
-            <form>
-                <img src="./imgs/btnCloseForm.svg" id="btnCloseForm" alt="">
-                
-                <fieldset>
-                    <legend>Inspirações</legend>
-                    
-                    <label for="title">Título</label>
-                    <input type="text" name="title" id="titleForm" placeholder="Insira um título">
-                    
-                    <label for="picture">Foto</label>
-                    <input type="text" name="picture" id="pictureForm" placeholder="Link da foto">
-                    
-                    <label for="description">Descrição</label>
-                    <input type="text" name="description" id="descriptionForm" placeholder="Escreva uma breve descrição">
-                    
-                    <div id="divBtnForm">
-                        <button type="submit" id="submitForm">Adicionar</button>
-                        <button type="reset" id="resetForm">Limpar</button>
-                    </div>
-                </fieldset>
+        <img src="./imgs/btnOpenForm.svg" id="btnOpenForm" alt="Adicionar">
+
+        <div id="extraDivFormImgs">
+            <div id="formImgs">
+                <form>
+                    <img src="./imgs/btnCloseForm.svg" id="btnCloseForm" alt="">
+
+                    <fieldset>
+                        <legend>Inspirações</legend>
+
+                        <label for="title">Título</label>
+                        <input type="text" name="title" id="titleForm" placeholder="Insira um título">
+
+                        <label for="picture">Foto</label>
+                        <input type="text" name="picture" id="pictureForm" placeholder="Link da foto">
+
+                        <label for="description">Descrição</label>
+                        <input type="text" name="description" id="descriptionForm"
+                            placeholder="Escreva uma breve descrição">
+
+                        <div id="divBtnForm">
+                            <button type="submit" id="submitForm">Adicionar</button>
+                            <button type="reset" id="resetForm">Limpar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <button class="open-button" onclick="openContact()"><img
+                src="https://image.flaticon.com/icons/png/512/3885/3885190.png" class="btnOp" alt="">
+            <p class="btnText">Fale conosco</p>
+        </button>
+        <div class="form-popup" id="contact">
+            <form class="form-container">
+                <button type="button" class="btn cancel" onclick="closeContact()">Fechar</button>
+
+                <h2>Fale conosco</h2>
+
+                <label for="name"><b>Nome</b></label>
+                <input type="text" placeholder="Insira seu nome" name="name" required>
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Insira seu email" name="email" required>
+
+                <label for="message"><b>Mensagem</b></label>
+                <textarea placeholder="Escreva sua mensagem" name="message" cols="20" rows="5" required></textarea>
+
+                <button type="submit" class="btn">Enviar</button>
             </form>
         </div>
-    </div>    
 
-    <button class="open-button" onclick="openContact()"><img src="https://image.flaticon.com/icons/png/512/3885/3885190.png" class="btnOp" alt=""><p class="btnText">Fale conosco</p></button>
-    <div class="form-popup" id="contact">
-        <form class="form-container">
-            <button type="button" class="btn cancel" onclick="closeContact()">Fechar</button>
+        <button class="open-button2" onclick="openTeam()"><img
+                src="https://image.flaticon.com/icons/png/512/1534/1534952.png" class="btnOp" alt="">
+            <p class="btnText">Equipe</p>
+        </button>
+        <div class="form-popup2" id="team">
+            <div class="form-container2">
+                <button type="button" class="btn2 cancel2" onclick="closeTeam()">Fechar</button>
 
-            <h2>Fale conosco</h2>
+                <h2>Equipe</h2>
 
-            <label for="name"><b>Nome</b></label>
-            <input type="text" placeholder="Insira seu nome" name="name" required>
-
-            <label for="email"><b>Email</b></label>
-            <input type="email" placeholder="Insira seu email" name="email" required>
-
-            <label for="message"><b>Mensagem</b></label>
-            <textarea placeholder="Escreva sua mensagem" name="message" cols="20" rows="5" required></textarea>
-
-            <button type="submit" class="btn">Enviar</button>
-        </form>
-    </div>
-
-    <button class="open-button2" onclick="openTeam()"><img src="https://image.flaticon.com/icons/png/512/1534/1534952.png" class="btnOp" alt=""><p class="btnText">Equipe</p></button>
-    <div class="form-popup2" id="team">
-        <div class="form-container2">
-            <button type="button" class="btn2 cancel2" onclick="closeTeam()">Fechar</button>
-
-            <h2>Equipe</h2>
-
-            <ul>
-                <li>Ailla Freire</li>
-                <li>Carolina Hakamada</li>
-                <li>Dominic Lourenço</li>
-                <li>Helena Perdigueiro</li>
-                <li>Renata Leal</li>
-                <li>Ruthiane Teixeira</li>
-            </ul>
+                <ul>
+                    <li>Ailla Freire</li>
+                    <li>Carolina Hakamada</li>
+                    <li>Dominic Lourenço</li>
+                    <li>Helena Perdigueiro</li>
+                    <li>Renata Leal</li>
+                    <li>Ruthiane Teixeira</li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </footer>
 
     <script src="./js/main.js"></script>
 </body>
