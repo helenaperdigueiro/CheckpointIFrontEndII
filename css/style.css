@@ -25,7 +25,13 @@ main {
 }
 
 #cards {
+  height: 80vh;
+  margin: 3rem;
+  padding: 0.5rem;
+  border: 5px solid #FFD5D5;
+  border-radius: 1rem;
   columns: 5 200px;
+  column-gap: 0;
 }
 
 .card {
@@ -33,13 +39,42 @@ main {
   padding: 0.5rem;
   margin-top: 2%;
   text-align: center;
+  border-radius: 1rem;
   display: inline-block;
+  position: relative;
+}
+
+.cardContent {
+  text-align: center;
   width: 100%;
   word-break: break-word;
 }
 
+.divBtnDeletePic {
+  display: none;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  background: rgba(255, 0, 0, 0.61);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.btnDeletePic {
+  max-width: 6rem;
+  position: absolute;
+  top: 32%;
+  left: 32%;
+}
+
 .cardPicture {
-  padding: 2%;
+  margin: 0.25rem;
+  border-radius: 1rem;
+}
+
+.cardPicture, .cardTitle, .cardDescription {
+  width: 100%;
 }
 
 #extraDivFormImgs {
@@ -202,15 +237,6 @@ main {
 
 ul {
   list-style-type: none;
-}
-
-.btnDelete {
-  max-width: 1.5rem;
-  display: none;
-}
-
-.cardPicture, .cardTitle, .cardDescription {
-  width: 100%;
 }
 
 #btnOpenForm {

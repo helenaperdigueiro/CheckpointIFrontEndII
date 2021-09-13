@@ -1,7 +1,8 @@
 let cards = document.getElementById("cards");
-let title = document.getElementById("titleForm");
-let picture = document.getElementById("pictureForm");
-let description = document.getElementById("descriptionForm");
+let titleForm = document.getElementById("titleForm");
+let pictureForm = document.getElementById("pictureForm");
+let descriptionForm = document.getElementById("descriptionForm");
+let btnDeletePic = document.querySelectorAll("btnDeletePic");
 
 let btnOpenForm = document.getElementById("btnOpenForm");
 let btnCloseForm = document.getElementById("btnCloseForm");
@@ -33,31 +34,47 @@ window.onclick = function(event) {
 document.querySelector("form").onsubmit = function () { return false };
 
 document.getElementById("submitForm").addEventListener("click", function () {
-  if ((title.value == "") || (picture.value == "") || (description.value == "")) {
-    title.focus();
+  if ((titleForm.value == "") || (pictureForm.value == "") || (descriptionForm.value == "")) {
+    titleForm.focus();
 
     document.querySelectorAll("input").forEach((item) => item.value = "");
 
     alert("Por favor, preencha os 3 campos!");
   } else {
+    cards.style.height = "auto";
+
     let card = document.createElement("div");
     card.setAttribute("class", "card");
     cards.appendChild(card);
 
-    card.innerHTML += `<h2 class="cardTitle">${title.value}</h2>`;
-    card.innerHTML += `<img src="${picture.value}" class="cardPicture">`;
-    card.innerHTML += `<h3 class="cardDescription">${description.value}</h3>`;
+    let cardContent = document.createElement("div");
+    cardContent.setAttribute("class", "cardContent");
+    card.appendChild(cardContent);
 
-    let btnDelete = document.createElement("img");
-    btnDelete.setAttribute("src", "https://image.flaticon.com/icons/png/512/463/463612.png");
-    btnDelete.setAttribute("class", "btnDelete");
-    card.appendChild(btnDelete);
-    btnDelete.addEventListener("click", function() { card.remove() });
-    card.onmouseover = function() { btnDelete.style.display = "block" };
+    cardContent.innerHTML += `<h2 class="cardTitle">${titleForm.value}</h2>`;
+    cardContent.innerHTML += `<img src="${pictureForm.value}" class="cardPicture">`;
+    cardContent.innerHTML += `<h4 class="cardDescription">${descriptionForm.value}</h4>`;
 
-    title.focus();
+    let divBtnDeletePic = document.createElement("div");
+    divBtnDeletePic.setAttribute("class", "divBtnDeletePic");
+    card.appendChild(divBtnDeletePic);
 
-    document.querySelectorAll("input").forEach((item) => item.value = "");
+    let btnDeletePic = document.createElement("img");
+    btnDeletePic.setAttribute("src", "./imgs/btnDeletePic.svg");
+    btnDeletePic.setAttribute("class", "btnDeletePic");
+    divBtnDeletePic.appendChild(btnDeletePic);
+    btnDeletePic.addEventListener("click", function () { card.remove() });
+
+    card.addEventListener("mouseover", function() {
+      divBtnDeletePic.style.display = "block";
+    })
+    card.addEventListener("mouseout", function() {
+      divBtnDeletePic.style.display = "none";
+    })
+
+    document.getElementById("titleForm").focus();
+
+    // document.querySelectorAll("input").forEach((item) => item.value = "");
   }
 })
 
