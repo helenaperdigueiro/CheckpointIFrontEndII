@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Satisfy&display=swap');
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -9,36 +11,59 @@ html {
 }
 
 body {
-  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
   display: flex;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem 2rem;
   width: 100%;
-  height: 10vh;
+  height: 4rem;
   background: rgb(247, 247, 247);
+  gap: 1rem;
+}
+
+#brand {
+  display: flex;
+}
+
+h1 {
+  display: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: black;
 }
 
 #card, #stock {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
+  display: block;
+  font-weight: bolder;
+  color: black;
 }
 
-#card::first-letter, #stock::first-letter {
-  font-weight: 800;
+#subtitle {
+  align-self: flex-end;
+  font-size: 1rem;
+  font-weight: normal;
+  color: rgb(106, 106, 106);
+  font-family: 'Satisfy', cursive;
+}
+
+#brand {
+  font-family: 'Jost', sans-serif;
 }
 
 main {
-  min-height: 78vh;
-  margin: 0;
+  min-height: 50vh;
   position: relative;
 }
 
 #cards {
-  height: 78.1vh;
-  margin: 1rem 2rem 0;
+  min-height: 75vh;
+  margin: 1rem;
   padding: 0.5rem;
   border: 5px solid #FFD5D5;
   border-radius: 1rem;
@@ -78,6 +103,9 @@ main {
   position: absolute;
   top: 32%;
   left: 32%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .cardPicture {
@@ -90,18 +118,17 @@ main {
 }
 
 #extraDivFormImgs {
-  /* display: none; */
   top: 0;
   left: 0;
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: 1;
+  padding: 0 7.5%;
   /* animation: slideDown 0.4s; */
 }
 
 #extraDivContact {
-  /* display: none; */
   top: 0;
   left: 0;
   position: fixed;
@@ -111,7 +138,6 @@ main {
 }
 
 #extraDivTeam {
-  /* display: none; */
   top: 0;
   left: 0;
   position: fixed;
@@ -125,8 +151,69 @@ main {
   z-index: 2;
   padding: 1rem;
   animation: slideUp 0.4s;
-  background: #FFFDF1;
-  bottom: 5.5rem;
+  background: #ffe4e4;
+  bottom: 14vh;
+  width: 85%;
+  border-radius: 1rem;
+}
+
+#inputsFormAddCard {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+#inputsFormAddCard input {
+  margin-bottom: 0.5rem;
+  margin-top: 0.1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 0.7rem;
+  padding: 0.4rem;
+}
+
+#inputsFormAddCard label {
+  padding-left: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+#inputsFormAddCard label:first-of-type {
+  margin-top: 0.3rem;
+}
+
+fieldset {
+  padding: 0 0.8rem 0.8rem;
+  border-radius: 1rem;
+  border: 3px solid white;
+  font-size: 12px;
+}
+
+#formAddCard {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset legend {
+  margin-left: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#divBtnFormAddCard {
+  justify-content: center;
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+#resetFormAddCard, #submitFormAddCard{
+  width: 6rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: rgb(158, 108, 172);
+  color: white;
 }
 
 @keyframes slideUp {
@@ -177,46 +264,59 @@ main {
 }
 
 /* The popup form - hidden by default */
-/* time formulario */
+/* Pop-up - fale conosco formulario */
 .form-popup {
   position: fixed;
-  bottom: 4rem;
-  left: 15px;
-  border: 5px solid #f1f1f1;
+  bottom: 11vh;
+  left: 1rem;
   padding: 0;
   z-index: 2;
 }
 
-/* fale conosco formulario */
+/*  Pop-up - time formulario */
 .form-popup2 {
   position: fixed;
-  bottom: 4rem;
+  bottom: 11vh;
   right: 15px;
-  border: 5px solid #f1f1f1;
   padding: 0;
   z-index: 2;
 }
 
 /* Add styles to the form container */
+/* fale conosco */
 .form-container {
   max-width: 12.5rem;
-  padding: 10px;
+  padding: 0.8rem;
   background-color: white;
+  border: solid 1px rgb(104, 103, 103);
+  border-radius: 1rem;
 }
 
+.form-container h2 {
+  margin-bottom: 0.8rem;
+}
+
+/* time */
 .form-container2 {
   max-width: 12.5rem;
-  padding: 10px 10px 10px 10px;
+  padding: 0.8rem;
   background-color: white;
+  border: solid 1px rgb(104, 103, 103);
+  border-radius: 1rem;
+}
+
+.form-container2 h2 {
+  margin-bottom: 0.8rem;
 }
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=email], .form-container textarea {
   width: 100%;
   padding: 10px;
-  margin: 5px 0 22px 0;
+  margin: 0.2rem 0 1rem 0;
   border: none;
   background: #f1f1f1;
+  border-radius: 0.5rem;
 }
 
 /* When the inputs get focus, do something */
@@ -225,9 +325,9 @@ main {
   outline: none;
 }
 
-/* Set a style for the submit/login button */
+/* Set a style for t#8dc2aeit/login button */
 .form-container .btn {
-  background-color: #04AA6D;
+  background-color: #92afa4;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -235,6 +335,7 @@ main {
   width: 100%;
   margin-bottom:10px;
   opacity: 0.8;
+  border-radius: 0.5rem;
 }
 
 .form-container2 .btn2 {
@@ -264,6 +365,7 @@ main {
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
 /* botão adicionar cards */
@@ -286,6 +388,8 @@ ul {
 #btnCloseForm {
   width: 1.2rem;
   cursor: pointer;
+  align-self: flex-end;
+  margin-right: 0.5rem;
 }
 
 .btnText {
@@ -304,6 +408,37 @@ footer {
   background: rgb(238, 238, 238);
 }
 
+@media screen and (min-width: 280px) {
+  #subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 350px) {
+  #inputsFormAddCard label {
+    /* justify-self: center; */
+    font-size: 1rem;
+  }
+
+  #inputsFormAddCard input {
+    /* justify-self: center; */
+    font-size: 0.9rem;
+  }
+
+  #inputsFormAddCard {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    align-items: baseline;
+    column-gap: 0.5rem;
+  }  
+}
+
+@media screen and (min-width: 385px) {
+  h1 {
+    display: block;
+  }
+}
+
 @media screen and (min-width: 600px) {
   .btnText {
     display: flex;
@@ -317,5 +452,28 @@ footer {
   #btnOpenTeam {
     width: 12rem;
   }
+  #extraDivFormImgs {
+    padding: 0 12.5%;
+  }
+  #formImgs {
+    width: 75%;
+  }
 }
 
+@media screen and (min-width: 700px) {
+  #extraDivFormImgs {
+    padding: 0 20%;
+  }
+  #formImgs {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #extraDivFormImgs {
+    padding: 0 30%;
+  }
+  #formImgs {
+    width: 40%;
+  }
+}

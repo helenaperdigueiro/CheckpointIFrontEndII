@@ -16,8 +16,14 @@
 
 <body>
     <header>
-        <h1 id="card">Card</h1>
-        <h1 id="stock">Stock</h1>
+        <div id="brand">
+            <h1 id="card">C</h1>
+            <h1>ard</h1>
+            <h1 id="stock">S</h1>
+            <h1>tock</h1>
+        </div>
+
+        <h2 id="subtitle">Seu quadro de inspirações</h2>
     </header>
     <main>
         <div id="cards">
@@ -27,25 +33,27 @@
 
         <div id="extraDivFormImgs" style="display: none;">
             <div id="formImgs">
-                <form>
+                <form id="formAddCard">
                     <img src="./imgs/btnCloseForm.svg" id="btnCloseForm" alt="">
 
                     <fieldset>
                         <legend>Inspirações</legend>
+                        
+                        <div id="inputsFormAddCard">
+                            <label for="title">Título</label>
+                            <input type="text" name="title" id="titleForm" placeholder="Insira um título">
 
-                        <label for="title">Título</label>
-                        <input type="text" name="title" id="titleForm" placeholder="Insira um título">
+                            <label for="picture">Foto</label>
+                            <input type="text" name="picture" id="pictureForm" placeholder="Link da foto">
 
-                        <label for="picture">Foto</label>
-                        <input type="text" name="picture" id="pictureForm" placeholder="Link da foto">
+                            <label for="description">Descrição</label>
+                            <input type="text" name="description" id="descriptionForm"
+                                placeholder="Escreva uma breve descrição">
+                        </div>
 
-                        <label for="description">Descrição</label>
-                        <input type="text" name="description" id="descriptionForm"
-                            placeholder="Escreva uma breve descrição">
-
-                        <div id="divBtnForm">
-                            <button type="submit" id="submitForm">Adicionar</button>
-                            <button type="reset" id="resetForm">Limpar</button>
+                        <div id="divBtnFormAddCard">
+                            <button type="submit" id="submitFormAddCard">Adicionar</button>
+                            <button type="reset" id="resetFormAddCard">Limpar</button>
                         </div>
                     </fieldset>
                 </form>

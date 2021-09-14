@@ -9,7 +9,7 @@ let btnCloseForm = document.getElementById("btnCloseForm");
 let extraDivFormImgs = document.getElementById("extraDivFormImgs");
 let formImgs = document.getElementById("formImgs");
 
-let submitForm = document.getElementById("submitForm");
+let submitForm = document.getElementById("submitFormAddCard");
 
 document.querySelector("form").onsubmit = function () { return false };
 
@@ -31,13 +31,17 @@ btnCloseForm.onclick = function() {
   extraDivFormImgs.style.display = "none";
 }
 
-document.getElementById("submitForm").addEventListener("click", function () {
+submitForm.addEventListener("click", function () {
   if ((titleForm.value == "") || (pictureForm.value == "") || (descriptionForm.value == "")) {
     titleForm.focus();
 
-    document.querySelectorAll("input").forEach((item) => item.value = "");
+    // document.querySelectorAll("input").forEach((item) => item.value = "");
 
-    alert("Por favor, preencha os 3 campos!");
+    // alert("Por favor, preencha os 3 campos!");
+
+    titleForm.value = "Filhote de Labrador";
+    pictureForm.value = "https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg";
+    descriptionForm.value = "Lorem ipsum, dolor sit amet";
   } else {
     cards.style.height = "auto";
 
@@ -70,7 +74,11 @@ document.getElementById("submitForm").addEventListener("click", function () {
       divBtnDeletePic.style.display = "none";
     })
 
-    document.getElementById("titleForm").focus();
+    titleForm.focus();
+
+    titleForm.value = "Filhote de Labrador";
+    pictureForm.value = "https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg";
+    descriptionForm.value = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident facere, iure laborum impedit rem tempore cum?";
 
     // document.querySelectorAll("input").forEach((item) => item.value = "");
   }
